@@ -33,5 +33,9 @@ class UserStoryAgent(AssistantAgent):
     An agent that creates user stories based on a given software idea.
     """
 
-    def __init__(self, name: str, model_client: ChatCompletionClient):
-        super().__init__(name, model_client, system_message=AGENT_INSTRUCTIONS)
+    def __init__(self, model_client: ChatCompletionClient):
+        super().__init__(
+            name=AGENT_NAME,
+            model_client=model_client,
+            system_message=AGENT_INSTRUCTIONS,
+        )

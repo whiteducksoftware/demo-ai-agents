@@ -21,7 +21,7 @@ azure_endpoint = os.getenv("AZURE_ENDPOINT")
 model = os.getenv("MODEL")
 api_version = os.getenv("API_VERSION")
 github_token = os.getenv("GITHUB_TOKEN")
-github_repository = "mjisaak/pyhton"
+github_repository = os.getenv("GITHUB_REPOSITORY")
 
 
 az_model_client = AzureOpenAIChatCompletionClient(
@@ -35,10 +35,9 @@ az_model_client = AzureOpenAIChatCompletionClient(
 
 # AGENTS
 user_proxy = UserProxyAgent("user_proxy")
-project_idea_agent = ProjectIdeaAgent("project_idea_agent", az_model_client)
-user_story_agent = UserStoryAgent("user_story_agent", az_model_client)
+project_idea_agent = ProjectIdeaAgent(az_model_client)
+user_story_agent = UserStoryAgent(az_model_client)
 github_issue_agent = GitHubIssueAgent(
-    "github_issue_agent",
     az_model_client,
     github_token=github_token,
     github_repository=github_repository,

@@ -1,7 +1,4 @@
 from semantic_kernel.agents import ChatCompletionAgent
-from semantic_kernel.connectors.ai.open_ai.services.azure_chat_completion import (
-    AzureChatCompletion,
-)
 from semantic_kernel.kernel import Kernel
 
 AGENT_NAME = "SeoBoostAgent"
@@ -15,16 +12,10 @@ If not, provide insights on how to improve SEO factors, without giving specific 
 
 class SeoBoostAgent(ChatCompletionAgent):
 
-    def __init__(self, service_id: str, kernel: Kernel, name: str):
-        super().__init__(service_id, kernel, name, instructions=AGENT_INSTRUCTIONS)
-
-    # def create(cls) -> ChatCompletionAgent:
-    #     kernel = Kernel()
-    #     kernel.add_service(AzureChatCompletion(service_id=AGENT_NAME))
-
-    #     return ChatCompletionAgent(
-    #         service_id=AGENT_NAME,
-    #         kernel=kernel,
-    #         name=AGENT_NAME,
-    #         instructions=AGENT_INSTRUCTIONS,
-    #     )
+    def __init__(self, kernel: Kernel):
+        super().__init__(
+            service_id=AGENT_NAME,
+            kernel=kernel,
+            name=AGENT_NAME,
+            instructions=AGENT_INSTRUCTIONS,
+        )

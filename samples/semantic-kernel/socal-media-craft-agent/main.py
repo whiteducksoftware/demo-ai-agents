@@ -26,12 +26,8 @@ async def main():
     kernel = Kernel()
     kernel.add_service(AzureChatCompletion())
 
-    agent_seo = SeoBoostAgent(
-        service_id="SeoBoostAgent", kernel=kernel, name="SeoBoostAgent"
-    )
-    agent_social = SocialCraftAgent(
-        service_id="SocialCraftAgent", kernel=kernel, name="SocialCraftAgent"
-    )
+    agent_seo = SeoBoostAgent(kernel)
+    agent_social = SocialCraftAgent(kernel)
 
     chat = AgentGroupChat(
         agents=[agent_social, agent_seo],

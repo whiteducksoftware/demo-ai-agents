@@ -22,7 +22,6 @@ class GitHubIssueAgent(AssistantAgent):
 
     def __init__(
         self,
-        name: str,
         model_client: ChatCompletionClient,
         github_repository: str,
         github_token: str,
@@ -30,8 +29,8 @@ class GitHubIssueAgent(AssistantAgent):
         self.github_repository = github_repository
         self.github_token = github_token
         super().__init__(
-            name,
-            model_client,
+            name=AGENT_NAME,
+            model_client=model_client,
             system_message=AGENT_INSTRUCTIONS,
             tools=[self.create_github_issue],
         )
