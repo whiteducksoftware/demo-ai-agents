@@ -40,7 +40,10 @@ async def main():
         ),
     )
 
-    with open("blog.md", "r", encoding="utf-8") as file:
+    dirname = os.path.dirname(__file__)
+    filename = os.path.join(dirname, "blog.md")
+
+    with open(filename, "r", encoding="utf-8") as file:
         blog_content = file.read().replace("\n", "")
 
     input = f"Create a social media post for the given blog content '{blog_content}'"
