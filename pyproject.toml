@@ -1,6 +1,6 @@
 [project]
 name = "socal-media-craft-agent"
-version = "0.1.0"
+version = "0.1.1"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -11,5 +11,4 @@ dependencies = [
     "python-dotenv>=1.0.1",
     "tavily-python>=0.5.0",
     "flock-core[tools]>=0.2.11",
-    "pyautogui>=0.9.54",
 ]
