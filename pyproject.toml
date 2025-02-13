@@ -10,5 +10,5 @@ dependencies = [
     "autogen-ext[azure,openai,web-surfer]>=0.4.4",
     "python-dotenv>=1.0.1",
     "tavily-python>=0.5.0",
-    "flock-core[tools]>=0.2.11",
+    "flock-core[tools]>=0.2.12",
 ]
